@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './ContactItem.module.css';
 const ContactItem = ({ id, name, number }) => {
   return (
@@ -6,5 +7,11 @@ const ContactItem = ({ id, name, number }) => {
       <p className={s.contactNumber}> {number}</p>
     </div>
   );
+};
+
+ContactItem.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  number: PropTypes.string,
 };
 export { ContactItem };

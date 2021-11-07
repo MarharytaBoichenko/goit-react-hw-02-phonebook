@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -60,4 +61,10 @@ class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
 export { ContactForm };
