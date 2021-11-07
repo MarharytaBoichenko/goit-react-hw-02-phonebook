@@ -28,11 +28,11 @@ export default class App extends Component {
 
     this.setState(prevState => {
       console.log(contact.name);
-      const nameArr = prevState.contacts.map(cont => cont.name);
-      console.log(nameArr);
-
-      if (nameArr.includes(contact.name)) {
-        alert(`${contact.name}` + 'is already in contact');
+      const isInContact = prevState.contacts.find(
+        cont => cont.name.toLowerCase() === contact.name.toLowerCase(),
+      );
+      if (isInContact) {
+        alert(`${contact.name}` + ' is already in contact');
         return;
       }
       return {

@@ -28,6 +28,7 @@ class ContactForm extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
     return (
       <form onSubmit={this.handleOnSubmit} className={s.form}>
         <label className={s.inputLabel}>
@@ -36,7 +37,7 @@ class ContactForm extends Component {
             onChange={this.handleOnInputChange}
             type="name"
             name="name"
-            value={this.state.name}
+            value={name}
             className={s.nameInput}
             required
           ></input>
@@ -47,7 +48,7 @@ class ContactForm extends Component {
             type="tel"
             name="number"
             onChange={this.handleOnInputChange}
-            value={this.state.number}
+            value={number}
             className={s.nameInput}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
