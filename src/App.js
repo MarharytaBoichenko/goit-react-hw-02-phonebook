@@ -32,6 +32,7 @@ export default class App extends Component {
       const isInContact = prevState.contacts.find(
         cont => cont.name.toLowerCase().trim() === nameInContact,
       );
+      console.log(contact.name);
       console.log(isInContact);
       if (isInContact) {
         alert(`${contact.name}` + ' is already in contact');
